@@ -41,7 +41,7 @@ if (Meteor.isServer) {
           throw new Meteor.Error(400, "Some parametres are wrong.");
         if (! this.userId)
           throw new Meteor.Error(403, "You must be logged in");
-        datenow = Date.now();
+        var datenow = Date.now();
         return Messages.insert({
           owner: this.userId,
           name: Meteor.user().emails[0].address,
